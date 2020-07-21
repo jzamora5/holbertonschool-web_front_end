@@ -127,7 +127,7 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: 10;
+  left: 0;
   background-color: var(--color-white);
   width: 0;
   height: 0.2rem;
