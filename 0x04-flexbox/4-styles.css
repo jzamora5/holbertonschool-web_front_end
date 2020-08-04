@@ -343,7 +343,7 @@ ul.row {
   list-style: none;
 }
 
-[class*="col-"] {
+[class*='col-'] {
   margin: 1rem;
 }
 
