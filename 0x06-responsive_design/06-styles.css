@@ -681,16 +681,18 @@ ul.row {
   min-height: 35vh;
 }
 
-.section-hero {
-  margin: -0.1rem 0;
-}
-
-.hero-homepage {
-  background-position: 85% 0;
-}
-
-.section-hero .section-body {
-  padding: 2rem;
+@media screen and (max-width: 767px){
+  .section-hero {
+    margin: -0.1rem 0;
+  }
+  
+  .hero-homepage {
+    background-position: 85% 0;
+  }
+  
+  .section-hero .section-body {
+    padding: 2rem;
+  }
 }
 
 /* Section Latest news
