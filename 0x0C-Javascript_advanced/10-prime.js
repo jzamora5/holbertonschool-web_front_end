@@ -22,5 +22,7 @@ for (let index = 0; index < 100; index++) {
 }
 const t1 = performance.now();
 console.log(
-  `Execution time of printing countPrimeNumbers was ${t1 - t0} milliseconds.`
+  `Execution time of calculating prime numbers 100 times was ${
+    t1 - t0
+  } milliseconds.`
 );
