@@ -4,14 +4,14 @@ const stock = {
 };
 
 function processPayment(itemName) {
-  if (stock[itemName] && stock[itemName] > 0) {
-    stock[itemName] -= 1;
+  if (stock[itemName.toLowerCase()] && stock[itemName.toLowerCase()] > 0) {
+    stock[itemName.toLowerCase()] -= 1;
   }
   console.log(`Payment is being processed for item ${itemName}`);
 }
 
 function processError(itemName) {
-  if (stock[itemName] != undefined) {
+  if (stock[itemName.toLowerCase()] != undefined) {
     console.log(`No more ${itemName} in stock`);
   } else {
     console.log(`Item ${itemName} is not offered`);
@@ -20,7 +20,7 @@ function processError(itemName) {
 
 function processOrder(itemName, callbackPayment, callbackError) {
   console.log(`Verifying the stock of ${itemName}`);
-  if (stock[itemName]) {
+  if (stock[itemName.toLowerCase()]) {
     callbackPayment(itemName);
   } else {
     callbackError(itemName);
@@ -31,4 +31,4 @@ let itemName = prompt(
   "Please enter the item you would like to purchase (Macbook, iPhone)"
 );
 
-processOrder(itemName.toLowerCase(), processPayment, processError);
+processOrder(itemName, processPayment, processError);
