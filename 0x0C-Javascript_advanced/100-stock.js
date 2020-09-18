@@ -16,6 +16,7 @@ function processError(itemName) {
   } else {
     console.log(`Item ${itemName} is not offered`);
   }
+  console.log("Payment is not being processed");
 }
 
 function processOrder(itemName, callbackPayment, callbackError) {
