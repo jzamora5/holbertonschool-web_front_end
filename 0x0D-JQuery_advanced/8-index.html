@@ -16,7 +16,9 @@
 
           $("input:nth-of-type(2)").click(function () {
             text = $("input").val();
-            queryWikipedia(text);
+            if (text) {
+              queryWikipedia(text);
+            }
           });
 
           $("body").append("<ul></ul>");
@@ -35,7 +37,6 @@
         }
 
         function queryWikipedia(search, offset = 0) {
-          $("ul").first().empty();
           const itemsPerPage = 10;
           const url = "https://en.wikipedia.org/w/api.php";
 
@@ -52,6 +53,7 @@
               srsort: "create_timestamp_desc",
             },
             success: function (response) {
+              $("ul").first().empty();
               if (response.query) {
                 if (response.query.search) {
                   list = response.query.search;

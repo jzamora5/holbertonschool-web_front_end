@@ -16,7 +16,9 @@
 
           $("input:nth-of-type(2)").click(function () {
             text = $("input").val();
-            queryWikipedia(text);
+            if (text) {
+              queryWikipedia(text);
+            }
           });
 
           $("body").append("<ul></ul>");
