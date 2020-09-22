@@ -22,7 +22,7 @@
           const url = "http://localhost:3000/posts";
           $.get(url, function (data, status, info) {
             if (info.readyState === 4 && info.status === 200) {
-              for (i of data) {
+              for (i of data.reverse()) {
                 addPostRow(i);
               }
             }
