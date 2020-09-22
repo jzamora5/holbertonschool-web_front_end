@@ -13,7 +13,7 @@
         const URL = "http://localhost:3000/posts";
 
         function addPostRow(data) {
-          $("body").append(`
+          $("form").after(`
           <p>
           <span>Post created with id ${data.id}, title: ${data.title}, author: ${data.author}</span>
           </p>
@@ -23,7 +23,7 @@
         function listPosts() {
           $.get(URL, function (data, status, info) {
             if (info.readyState === 4 && info.status === 200) {
-              for (i of data.reverse()) {
+              for (i of data) {
                 addPostRow(i);
               }
             }
@@ -54,7 +54,8 @@
         }
 
         function sendForm() {
-          $("form").after("About to send the query to the API");
+          const $msg = $("<p>About to send the query to the API</p>");
+          $("form").after($msg);
           author = $("#author").val();
           title = $("#title").val();
 
@@ -67,7 +68,10 @@
               title,
             }),
             success: function (response) {
-              console.log(response);
+              addPostRow(response);
+              $("#author").val("");
+              $("#title").val("");
+              $msg.remove();
             },
             error: function (error) {
               alert("Error sending the POST query");
