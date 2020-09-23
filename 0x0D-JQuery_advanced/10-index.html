@@ -20,9 +20,13 @@
 
         function listPosts() {
           const url = "http://localhost:3000/posts";
-          $.get(url, function (data, status, info) {
+          $.get(url, { _sort: "id", _order: "desc" }, function (
+            data,
+            status,
+            info
+          ) {
             if (info.readyState === 4 && info.status === 200) {
-              for (i of data.reverse()) {
+              for (i of data) {
                 addPostRow(i);
               }
             }
