@@ -21,9 +21,12 @@
         const date = new Date();
         date.setDate(date.getDate() + 10);
         const expires = "expires=" + date.toUTCString();
-        if (firstname) document.cookie = `firstname=${firstname}`;
-        if (email) document.cookie = `email=${email}`;
-        if (firstname || email) document.cookie = expires + ";path=/";
+        if (firstname) {
+          document.cookie = `firstname=${firstname}; ${expires}; path=/`;
+        }
+        if (email) {
+          document.cookie = `email=${email}; ${expires}; path=/`;
+        }
       }
 
       function showCookies() {
