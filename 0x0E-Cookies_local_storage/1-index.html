@@ -6,12 +6,14 @@
     <title>1-index</title>
   </head>
   <body>
-    <h2>Login to the website</h2>
-    <input type="text" id="firstname" placeholder="Firstname" />
-    <input type="text" id="email" placeholder="Email" />
-    <button onclick="setCookies()">Log me in</button>
-    <h2>Cookies</h2>
-    <button onclick="showCookies()">Show the cookies</button>
+    <div>
+      <h2>Login to the website</h2>
+      <input type="text" id="firstname" placeholder="Firstname" />
+      <input type="text" id="email" placeholder="Email" />
+      <button onclick="setCookies()">Log me in</button>
+      <h2>Cookies</h2>
+      <button onclick="showCookies()">Show the cookies</button>
+    </div>
     <script>
       function setCookies() {
         const firstname = document.getElementById("firstname").value;
